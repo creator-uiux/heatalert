@@ -1,0 +1,40 @@
+package com.example.heatalert
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var presenter: RegisterPresenter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_register)
+        presenter = RegisterPresenter(this)
+        val username = findViewById<EditText>(R.id.etUsername)
+        val email = findViewById<EditText>(R.id.etEmail)
+        val password = findViewById<EditText>(R.id.etPassword)
+        val registerBtn = findViewById<Button>(R.id.btnSignup)
+        val loginText = findViewById<TextView>(R.id.btnLogin)
+        registerBtn.setOnClickListener {
+            val result = presenter.validateRegister(username.text.toString(), email.text.toString(), password.text.toString())
+            if (result == "success") {
+                Toast.makeText(this, "Registered successfully!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(this, result, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        loginText.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+    }
+}
