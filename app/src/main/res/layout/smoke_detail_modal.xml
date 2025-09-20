@@ -11,42 +11,51 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingBottom="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Title Row with Icon and Close Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="💨"
-            android:textSize="24sp"
-            android:layout_marginEnd="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="4dp">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Smoke"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💨"
+                android:textSize="24sp"
+                android:layout_marginEnd="8dp" />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Smoke"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Close"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Sensor ID Row -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sensor ID: SS-001"
             android:textSize="12sp"
-            android:textColor="#666666" />
-
-        <ImageView
-            android:id="@+id/ivClose"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_close"
-            android:contentDescription="Close"
-            android:layout_marginStart="12dp"
-            android:clickable="true"
-            android:focusable="true" />
+            android:textColor="#666666"
+            android:layout_marginStart="32dp" />
     </LinearLayout>
 
     <!-- Smoke Value -->
@@ -208,25 +217,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end">
+        android:gravity="center"
+        android:layout_marginTop="8dp">
 
         <Button
             android:id="@+id/btnClose"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="Close"
             android:textColor="#666666"
             android:background="@drawable/button_secondary"
-            android:paddingHorizontal="20dp"
-            android:layout_marginEnd="12dp" />
+            android:layout_marginEnd="16dp" />
 
         <Button
             android:id="@+id/btnViewHistory"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="View History"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_primary"
-            android:paddingHorizontal="20dp" />
+            android:background="@drawable/button_primary" />
     </LinearLayout>
 </LinearLayout>

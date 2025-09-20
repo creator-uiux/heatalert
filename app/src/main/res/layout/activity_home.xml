@@ -1,263 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF"
-    android:padding="16dp">
+    android:fitsSystemWindows="true">
 
-    <!-- Header with burger menu, title, and settings -->
+    <!-- Main Content -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="16dp">
-
-        <ImageView
-            android:id="@+id/ivBurger"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/menu"
-            android:contentDescription="Menu" />
-
-        <TextView
-            android:id="@+id/tvAppTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="HeatAlert"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center" />
-
-        <ImageView
-            android:id="@+id/ivSettings"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/settings"
-            android:contentDescription="Settings" />
-    </LinearLayout>
-    <!-- Horizontal divider line -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000000"
-        android:layout_marginBottom="16dp" />
-    <!-- Live Monitoring Header -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingBottom="16dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Live Monitoring"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
-
-        <View
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:background="@drawable/circle_green"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Last update: 09:42 AM"
-            android:textSize="12sp"
-            android:textColor="#666666" />
-    </LinearLayout>
-
-    <!-- Temperature Card -->
-    <LinearLayout
-        android:id="@+id/temperatureCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/card_background_orange"
-        android:padding="16dp"
-        android:layout_marginBottom="12dp"
-        android:gravity="center_vertical">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Temperature"
-                android:textSize="14sp"
-                android:textColor="#B8860B" />
-
-            <TextView
-                android:id="@+id/tvTemperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="23.9°C"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginTop="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hot Temperature"
-                android:textSize="12sp"
-                android:textColor="#B8860B"
-                android:layout_marginTop="2dp" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🌡️"
-            android:textSize="32sp"
-            android:layout_marginStart="16dp" />
-    </LinearLayout>
-
-    <!-- Smoke Level Card -->
-    <LinearLayout
-        android:id="@+id/smokeCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/card_background_orange"
-        android:padding="16dp"
-        android:layout_marginBottom="12dp"
-        android:gravity="center_vertical">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Smoke Level"
-                android:textSize="14sp"
-                android:textColor="#B8860B" />
-
-            <TextView
-                android:id="@+id/tvSmoke"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12%"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginTop="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Moderate Level"
-                android:textSize="12sp"
-                android:textColor="#B8860B"
-                android:layout_marginTop="2dp" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="💨"
-            android:textSize="32sp"
-            android:layout_marginStart="16dp" />
-    </LinearLayout>
-
-    <!-- Flame Status Card -->
-    <LinearLayout
-        android:id="@+id/flameCard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/card_background_orange"
-        android:padding="16dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center_vertical">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Flame Status"
-                android:textSize="14sp"
-                android:textColor="#B8860B" />
-
-            <TextView
-                android:id="@+id/tvFlame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Clear"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_marginTop="4dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="All Clear"
-                android:textSize="12sp"
-                android:textColor="#228B22"
-                android:layout_marginTop="2dp" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🔥"
-            android:textSize="32sp"
-            android:layout_marginStart="16dp" />
-    </LinearLayout>
-
-    <!-- Temperature Trend Chart Card -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/card_background_light"
+        android:background="#FFFFFF"
         android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Header with burger menu, title, and settings -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Temperature Trend (Last Hour)"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:id="@+id/ivBurger"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/menu"
+                android:contentDescription="Menu"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tvAppTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HeatAlert"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/homesettings"
+                android:contentDescription="Settings" />
+        </LinearLayout>
+
+        <!-- Horizontal divider line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"
             android:layout_marginBottom="16dp" />
 
-        <!-- Placeholder for chart -->
-        <View
+        <!-- Live Monitoring Header -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="#F0F0F0" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
 
-        <!-- Chart line at bottom -->
-        <View
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Live Monitoring"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/circle_green"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last update: 09:42 AM"
+                android:textSize="12sp"
+                android:textColor="#666666" />
+        </LinearLayout>
+
+        <!-- Temperature Card -->
+        <LinearLayout
+            android:id="@+id/temperatureCard"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#CD7F32"
-            android:layout_marginTop="-2dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background_orange"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textSize="14sp"
+                    android:textColor="#B8860B" />
+
+                <TextView
+                    android:id="@+id/tvTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23.9°C"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hot Temperature"
+                    android:textSize="12sp"
+                    android:textColor="#B8860B"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌡️"
+                android:textSize="32sp"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Smoke Level Card -->
+        <LinearLayout
+            android:id="@+id/smokeCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background_orange"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smoke Level"
+                    android:textSize="14sp"
+                    android:textColor="#B8860B" />
+
+                <TextView
+                    android:id="@+id/tvSmoke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12%"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Moderate Level"
+                    android:textSize="12sp"
+                    android:textColor="#B8860B"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💨"
+                android:textSize="32sp"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Flame Status Card -->
+        <LinearLayout
+            android:id="@+id/flameCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/card_background_orange"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flame Status"
+                    android:textSize="14sp"
+                    android:textColor="#B8860B" />
+
+                <TextView
+                    android:id="@+id/tvFlame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clear"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Clear"
+                    android:textSize="12sp"
+                    android:textColor="#228B22"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔥"
+                android:textSize="32sp"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <!-- Temperature Trend Chart Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background_light"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature Trend (Last Hour)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Placeholder for chart -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#F0F0F0" />
+
+            <!-- Chart line at bottom -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#CD7F32"
+                android:layout_marginTop="-2dp" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        app:itemIconTint="@null"
+        app:itemTextColor="#333333"
+        android:background="#FFFFFF" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

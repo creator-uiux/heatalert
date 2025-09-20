@@ -2,99 +2,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_margin="16dp"
     android:background="@drawable/modal_background"
-    android:padding="20dp"
-    android:layout_margin="16dp">
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <!-- Modal Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingBottom="16dp">
 
+        <!-- Title Row with Icon and Close Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="🔥"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Flame"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:clickable="true"
+                android:contentDescription="Close"
+                android:focusable="true"
+                android:src="@drawable/ic_close" />
+        </LinearLayout>
+
+        <!-- Sensor ID Row -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🔥"
-            android:textSize="24sp"
-            android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Flame"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:text="Sensor ID: FS-002"
-            android:textSize="12sp"
-            android:textColor="#666666" />
-
-        <ImageView
-            android:id="@+id/ivClose"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_close"
-            android:contentDescription="Close"
-            android:layout_marginStart="12dp"
-            android:clickable="true"
-            android:focusable="true" />
+            android:textColor="#666666"
+            android:textSize="12sp" />
     </LinearLayout>
 
     <!-- Flame Status -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/flame_value_background"
-        android:padding="24dp"
-        android:layout_marginBottom="20dp">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/tvFlameValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Clear"
+            android:textColor="#FF6B35"
             android:textSize="36sp"
-            android:textStyle="bold"
-            android:textColor="#FF6B35" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="Clear Level"
-            android:textSize="14sp"
             android:textColor="#666666"
-            android:layout_marginTop="4dp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <!-- Sensor Details Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="Sensor Details"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:textColor="#000000"
-        android:layout_marginBottom="12dp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <!-- Details List -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/details_background"
-        android:padding="16dp"
-        android:layout_marginBottom="20dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <!-- Status -->
         <LinearLayout
@@ -102,19 +111,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Status"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Online"
-                android:textSize="14sp"
                 android:textColor="#4CAF50"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -124,19 +135,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Last Reading"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="04:02 AM"
-                android:textSize="14sp"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!-- Location -->
@@ -145,19 +158,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Location"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kitchen Area"
-                android:textSize="14sp"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!-- Battery -->
@@ -166,19 +181,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Battery"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="92%"
-                android:textSize="14sp"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <!-- Accuracy -->
@@ -187,19 +204,21 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingVertical="8dp">
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Accuracy"
-                android:textSize="14sp"
-                android:textColor="#666666" />
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="99%"
-                android:textSize="14sp"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -207,26 +226,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end">
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnClose"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="Close"
-            android:textColor="#666666"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/button_secondary"
-            android:paddingHorizontal="20dp"
-            android:layout_marginEnd="12dp" />
+            android:text="Close"
+            android:textColor="#666666" />
 
         <Button
             android:id="@+id/btnViewHistory"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:text="View History"
-            android:textColor="#FFFFFF"
             android:background="@drawable/button_primary"
-            android:paddingHorizontal="20dp" />
+            android:text="View History"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>
