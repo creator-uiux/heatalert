@@ -33,46 +33,21 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif" />
 
-
-
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:backgroundTint="#CCCCCC"
-        android:padding="12dp"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="sans-serif" />
-
-    <TextView
-        android:id="@+id/tvForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:textColor="#8B4000"
-        android:layout_gravity="end"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        android:focusable="true" />
-
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnResetPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Reset Password"
         android:backgroundTint="#E3963E"
         android:textColor="#FFFFFF"
         android:padding="12dp"
         android:layout_marginBottom="16dp" />
 
     <TextView
-        android:id="@+id/tvSignUp"
+        android:id="@+id/btnLoginBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Sign Up"
+        android:text="Remember now? Login"
         android:textColor="#8B4000"
         android:fontFamily="sans-serif"
         android:layout_marginTop="8dp"
