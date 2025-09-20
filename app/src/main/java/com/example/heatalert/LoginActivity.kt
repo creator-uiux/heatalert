@@ -7,31 +7,53 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.heatalert.presenter.LoginPresenter
+import com.example.heatalert.view.LoginView
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), LoginView {
 
     private lateinit var presenter: LoginPresenter
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        presenter = LoginPresenter(this)
-        val email = findViewById<EditText>(R.id.etEmail)
-        val password = findViewById<EditText>(R.id.etPassword)
-        val loginBtn = findViewById<Button>(R.id.btnLogin)
-        val signUpText = findViewById<TextView>(R.id.tvSignUp)
-        loginBtn.setOnClickListener {
-            val result = presenter.validateLogin(email.text.toString(), password.text.toString())
-            if (result == "success") {
-                startActivity(Intent(this, HomeActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, result, Toast.LENGTH_SHORT).show()
-            }
+
+        presenter = LoginPresenter(this, this)
+
+        etEmail = findViewById(R.id.etEmail)
+        etPassword = findViewById(R.id.etPassword)
+        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val tvSignUp = findViewById<TextView>(R.id.tvSignUp)
+
+        btnLogin.setOnClickListener {
+            presenter.validateLogin(
+                etEmail.text.toString().trim(),
+                etPassword.text.toString().trim()
+            )
         }
-        signUpText.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-            finish()
+
+        tvSignUp.setOnClickListener {
+            presenter.onSignUpClicked()
         }
+    }
+
+    override fun showLoginSuccess() {
+        Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showLoginError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun navigateToHome() {
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
+    }
+
+    override fun navigateToRegister() {
+        startActivity(Intent(this, RegisterActivity::class.java))
+        finish()
     }
 }
