@@ -1,8 +1,7 @@
-package com.example.heatalert.presenter
+package com.example.heatalert.Register
 
 import android.content.Context
 import android.util.Patterns
-import com.example.heatalert.view.RegisterView
 
 class RegisterPresenter(private val view: RegisterView, private val context: Context) {
 

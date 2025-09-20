@@ -1,4 +1,4 @@
-package com.example.heatalert.view
+package com.example.heatalert.Login
 
 interface LoginView {
     fun showLoginSuccess()

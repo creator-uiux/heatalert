@@ -1,8 +1,7 @@
-package com.example.heatalert.presenter
+package com.example.heatalert.Login
 
 import android.content.Context
 import android.util.Patterns
-import com.example.heatalert.view.LoginView
 
 class LoginPresenter(private val view: LoginView, private val context: Context) {
 

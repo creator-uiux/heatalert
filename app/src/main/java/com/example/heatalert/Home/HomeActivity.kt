@@ -1,4 +1,4 @@
-package com.example.heatalert
+package com.example.heatalert.Home
 
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -6,10 +6,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.heatalert.model.SensorData
-import com.example.heatalert.model.SensorDetail
-import com.example.heatalert.presenter.HomePresenter
-import com.example.heatalert.view.HomeView
+import com.example.heatalert.R
+import com.example.heatalert.model.SensorDataModel
+import com.example.heatalert.model.SensorDetailModel
 
 class HomeActivity : AppCompatActivity(), HomeView {
 
@@ -46,13 +45,13 @@ class HomeActivity : AppCompatActivity(), HomeView {
         presenter.loadSensorData()
     }
 
-    override fun displaySensorData(data: SensorData) {
+    override fun displaySensorData(data: SensorDataModel) {
         tvTemperature.text = "${data.temperature}°C"
         tvSmoke.text = "${data.smokeLevel}%"
         tvFlame.text = data.flameStatus
     }
 
-    override fun showSensorDetail(sensorDetail: SensorDetail) {
+    override fun showSensorDetail(sensorDetail: SensorDetailModel) {
         // Create and show modal dialog
         val dialogView = layoutInflater.inflate(
             when (sensorDetail.sensorType) {

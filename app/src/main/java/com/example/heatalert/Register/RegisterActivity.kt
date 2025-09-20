@@ -1,4 +1,4 @@
-package com.example.heatalert
+package com.example.heatalert.Register
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.heatalert.presenter.RegisterPresenter
-import com.example.heatalert.view.RegisterView
+import com.example.heatalert.Login.LoginActivity
+import com.example.heatalert.R
 
 class RegisterActivity : AppCompatActivity(), RegisterView {
 

@@ -1,16 +1,15 @@
-package com.example.heatalert.presenter
+package com.example.heatalert.Home
 
 import android.content.Context
-import com.example.heatalert.model.SensorData
-import com.example.heatalert.model.SensorDetail
-import com.example.heatalert.view.HomeView
+import com.example.heatalert.model.SensorDataModel
+import com.example.heatalert.model.SensorDetailModel
 
 class HomePresenter(private val view: HomeView, private val context: Context) {
 
     fun loadSensorData() {
         try {
             // Mock sensor data - replace with actual sensor readings
-            val sensorData = SensorData(
+            val sensorData = SensorDataModel(
                 temperature = 23.9f,
                 smokeLevel = 12,
                 flameStatus = "Clear",
@@ -23,7 +22,7 @@ class HomePresenter(private val view: HomeView, private val context: Context) {
     }
 
     fun onTemperatureClicked() {
-        val temperatureDetail = SensorDetail(
+        val temperatureDetail = SensorDetailModel(
             sensorId = "TS-001",
             sensorType = "Temperature",
             status = "Online",
@@ -37,7 +36,7 @@ class HomePresenter(private val view: HomeView, private val context: Context) {
     }
 
     fun onSmokeClicked() {
-        val smokeDetail = SensorDetail(
+        val smokeDetail = SensorDetailModel(
             sensorId = "SS-001",
             sensorType = "Smoke",
             status = "Online",
@@ -51,7 +50,7 @@ class HomePresenter(private val view: HomeView, private val context: Context) {
     }
 
     fun onFlameClicked() {
-        val flameDetail = SensorDetail(
+        val flameDetail = SensorDetailModel(
             sensorId = "FS-002",
             sensorType = "Flame",
             status = "Online",

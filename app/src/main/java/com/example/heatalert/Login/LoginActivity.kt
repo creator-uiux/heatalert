@@ -1,4 +1,4 @@
-package com.example.heatalert
+package com.example.heatalert.Login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.heatalert.presenter.LoginPresenter
-import com.example.heatalert.view.LoginView
+import com.example.heatalert.Home.HomeActivity
+import com.example.heatalert.R
+import com.example.heatalert.Register.RegisterActivity
 
 class LoginActivity : AppCompatActivity(), LoginView {
 

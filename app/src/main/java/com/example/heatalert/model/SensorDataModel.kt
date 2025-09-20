@@ -1,6 +1,6 @@
 package com.example.heatalert.model
 
-data class SensorData(
+data class SensorDataModel(
     val temperature: Float,
     val smokeLevel: Int,
     val flameStatus: String,
