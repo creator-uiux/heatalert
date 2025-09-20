@@ -21,6 +21,7 @@ import com.example.heatalert.R
 import com.google.android.material.navigation.NavigationView
 import android.content.res.ColorStateList
 import androidx.core.content.ContextCompat
+import com.example.heatalert.Alert.AlertActivity
 
 class HomeActivity : AppCompatActivity(), HomeView, NavigationView.OnNavigationItemSelectedListener {
 
@@ -99,7 +100,7 @@ class HomeActivity : AppCompatActivity(), HomeView, NavigationView.OnNavigationI
             R.id.nav_alerts -> {
                 // Navigate to Alerts activity
                 Toast.makeText(this, "Alerts", Toast.LENGTH_SHORT).show()
-                // startActivity(Intent(this, AlertsActivity::class.java))
+                startActivity(Intent(this, AlertActivity::class.java))
             }
             R.id.nav_history -> {
                 // Navigate to History activity
