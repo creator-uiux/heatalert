@@ -6,7 +6,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.heatalert.Home.HomeActivity // Change this to your actual home screen activity
+import com.example.heatalert.Login.LoginActivity
 import com.example.heatalert.R
 
 class SplashActivity : AppCompatActivity(), SplashView {
@@ -33,8 +33,9 @@ class SplashActivity : AppCompatActivity(), SplashView {
     }
 
     override fun navigateToNextScreen() {
-        val intent = Intent(this, HomeActivity::class.java)
+        // After splash -> go to LoginActivity
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
-        finish()
+        finish() // prevent going back to splash
     }
 }
