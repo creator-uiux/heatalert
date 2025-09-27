@@ -1,4 +1,4 @@
-package com.example.heatalert.model
+package com.example.heatalert.Sensors
 
 data class SensorDetailModel(
     val sensorId: String,

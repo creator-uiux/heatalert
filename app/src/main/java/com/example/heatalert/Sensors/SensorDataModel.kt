@@ -1,4 +1,4 @@
-package com.example.heatalert.model
+package com.example.heatalert.Sensors
 
 data class SensorDataModel(
     val temperature: Float,

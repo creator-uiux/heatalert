@@ -9,4 +9,25 @@
     <color name="white">#FFFFFFFF</color>
     <color name="nav_item_color">#666666</color>
     <color name="nav_item_selected_color">#FF6B35</color>
+    <!-- Main Theme Colors -->
+    <color name="orange_primary">#FFA500</color>
+    <color name="orange_warning">#FFA500</color>
+    <color name="orange_light">#FFF8DC</color>
+
+    <!-- Status Colors -->
+    <color name="green_safe">#228B22</color>
+    <color name="red_danger">#FF0000</color>
+
+    <!-- Background Colors -->
+    <color name="light_yellow">#FFF8DC</color>
+    <color name="light_pink">#FFE4E1</color>
+    <color name="light_gray">#F5F5F5</color>
+    <color name="medium_gray">#E8E8E8</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#333333</color>
+    <color name="text_hint">#999999</color>
+    <color name="text_muted">#666666</color>
+    <color name="gray_light">#FFF8DC</color>
 </resources>

@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/smoke_value_background"
+        android:background="@drawable/temp_value_background"
         android:padding="24dp"
         android:layout_marginBottom="20dp">
 
@@ -75,7 +75,7 @@
             android:text="11%"
             android:textSize="36sp"
             android:textStyle="bold"
-            android:textColor="#4682B4" />
+            android:textColor="#FF6B35" />
 
         <TextView
             android:layout_width="wrap_content"

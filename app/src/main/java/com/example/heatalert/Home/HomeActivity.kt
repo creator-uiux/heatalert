@@ -7,21 +7,19 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.heatalert.model.SensorDataModel
-import com.example.heatalert.model.SensorDetailModel
-import com.example.heatalert.Home.HomePresenter
-import com.example.heatalert.Home.HomeView
+import com.example.heatalert.Sensors.SensorDataModel
+import com.example.heatalert.Sensors.SensorDetailModel
 import com.example.heatalert.Login.LoginActivity
 import com.example.heatalert.R
 import com.google.android.material.navigation.NavigationView
 import android.content.res.ColorStateList
 import androidx.core.content.ContextCompat
 import com.example.heatalert.Alert.AlertActivity
+import com.example.heatalert.History.HistoryActivity
 
 class HomeActivity : AppCompatActivity(), HomeView, NavigationView.OnNavigationItemSelectedListener {
 
@@ -104,8 +102,8 @@ class HomeActivity : AppCompatActivity(), HomeView, NavigationView.OnNavigationI
             }
             R.id.nav_history -> {
                 // Navigate to History activity
-                Toast.makeText(this, "History", Toast.LENGTH_SHORT).show()
-                // startActivity(Intent(this, HistoryActivity::class.java))
+                Toast.makeText(this, "com/example/heatalert/History", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, HistoryActivity::class.java))
             }
             R.id.nav_settings -> {
                 // Navigate to Settings activity

@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.HeatAlert" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">#FFA500</item>
+        <item name="colorPrimaryDark">#FF8C00</item>
+        <item name="colorAccent">#FFA500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Theme for activities with no action bar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#FFA500</item>
+        <item name="colorPrimaryDark">#FF8C00</item>
+        <item name="colorAccent">#FFA500</item>
+    </style>
+
+    <!-- Theme for your HeatAlert activities -->
+    <style name="HeatAlertTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#FFA500</item>
+        <item name="colorPrimaryDark">#FF8C00</item>
+        <item name="colorAccent">#FFA500</item>
+        <item name="android:statusBarColor">#FF8C00</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
 </resources>

@@ -1,8 +1,8 @@
 package com.example.heatalert.Home
 
 import android.content.Context
-import com.example.heatalert.model.SensorDataModel
-import com.example.heatalert.model.SensorDetailModel
+import com.example.heatalert.Sensors.SensorDataModel
+import com.example.heatalert.Sensors.SensorDetailModel
 
 class HomePresenter(private val view: HomeView, private val context: Context) {
 

@@ -1,7 +1,7 @@
 package com.example.heatalert.Home
 
-import com.example.heatalert.model.SensorDataModel
-import com.example.heatalert.model.SensorDetailModel
+import com.example.heatalert.Sensors.SensorDataModel
+import com.example.heatalert.Sensors.SensorDetailModel
 
 interface HomeView {
     fun displaySensorData(data: SensorDataModel)
