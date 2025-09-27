@@ -20,36 +20,48 @@
             android:orientation="horizontal"
             android:padding="16dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/menu_icon_background"
-                android:contentDescription="Menu"
-                android:src="@drawable/ic_menu" />
-
-            <TextView
-                android:layout_width="0dp"
+            <!-- Header with burger menu, title, and settings -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="Active Alerts"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp">
 
-            <TextView
-                android:id="@+id/tv_clear_all"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="Clear All"
-                android:textColor="#FF9500"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:background="?android:attr/selectableItemBackground"
-                android:padding="8dp" />
+                <ImageView
+                    android:id="@+id/ivBurger"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/menu"
+                    android:contentDescription="Menu"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tvAppTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HeatAlert"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <ImageView
+                    android:id="@+id/ivSettings"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/homesettings"
+                    android:contentDescription="Settings" />
+            </LinearLayout>
+
+            <!-- Horizontal divider line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"
+                android:layout_marginBottom="16dp" />
 
         </LinearLayout>
 

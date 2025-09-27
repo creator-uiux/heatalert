@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="340dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <!-- Dialog Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/dialog_header_profile"
+        android:padding="16dp">
+
+        <!-- Edit Profile Icon -->
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_edit_profile"
+            android:layout_marginEnd="12dp"
+            app:tint="@android:color/white" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit Profile"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Close Button -->
+        <ImageView
+            android:id="@+id/iv_close_profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_close_white"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Dialog Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Profile Picture Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/profile_circle_background"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_person"
+                    app:tint="@android:color/white" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Change Profile Picture"
+                android:textColor="#FF6B35"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Full Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/et_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:text="John Smith"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:background="@drawable/edittext_profile_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_person_small"
+            android:drawablePadding="12dp" />
+
+        <!-- Username -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your username"
+            android:inputType="text"
+            android:text="johnsmith"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:background="@drawable/edittext_profile_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_username_small"
+            android:drawablePadding="12dp" />
+
+        <!-- Email Address -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Address"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:text="john.smith@example.com"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:background="@drawable/edittext_profile_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_email_small"
+            android:drawablePadding="12dp" />
+
+        <!-- Phone Number -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter your phone number"
+            android:inputType="phone"
+            android:text="+1 (555) 123-4567"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:textColorHint="#999999"
+            android:background="@drawable/edittext_profile_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            android:drawableStart="@drawable/ic_phone_small"
+            android:drawablePadding="12dp" />
+
+        <!-- Info Note -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/info_note_background"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_info"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="8dp"
+                app:tint="#4A90E2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Changes to your email will require verification. We'll send a confirmation link to your new email address."
+                android:textColor="#666666"
+                android:textSize="12sp"
+                android:lineSpacingExtra="2dp" />
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <!-- Cancel Button -->
+            <Button
+                android:id="@+id/btn_cancel_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="Cancel"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:background="@drawable/button_cancel"
+                android:paddingHorizontal="24dp"
+                android:layout_marginEnd="12dp"
+                android:minWidth="0dp" />
+
+            <!-- Save Changes Button -->
+            <Button
+                android:id="@+id/btn_save_changes"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:text="Save Changes"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:background="@drawable/button_profile"
+                android:paddingHorizontal="24dp"
+                android:minWidth="0dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
