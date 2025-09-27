@@ -4,16 +4,25 @@ import android.os.Handler
 import android.os.Looper
 
 class SplashPresenter(private val view: SplashView) {
+
+    private var progress = 0
     private val handler = Handler(Looper.getMainLooper())
-    private val splashDelay: Long = 3000 // 3 seconds
 
     fun startLoading() {
-        handler.postDelayed({
-            view.navigateToLogin()
-        }, splashDelay)
+        progress = 0
+        updateProgressBar()
     }
 
-    fun onDestroy() {
-        handler.removeCallbacksAndMessages(null)
+    private fun updateProgressBar() {
+        handler.postDelayed({
+            progress += 10
+            view.updateProgress(progress)
+
+            if (progress < 100) {
+                updateProgressBar()
+            } else {
+                view.navigateToNextScreen()
+            }
+        }, 300) // 0.3 second delay between updates
     }
 }
