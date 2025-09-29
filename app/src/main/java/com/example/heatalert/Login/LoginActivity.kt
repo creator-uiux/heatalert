@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.heatalert.Home.HomeActivity
 import com.example.heatalert.R
 import com.example.heatalert.Register.RegisterActivity
+import com.example.heatalert.reset.ResetActivity
 
 class LoginActivity : AppCompatActivity(), LoginView {
 
@@ -27,6 +28,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
         etPassword = findViewById(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvSignUp = findViewById<TextView>(R.id.tvSignUp)
+        val tvForgotPassword = findViewById<TextView>(R.id.tvForgotPassword)
 
         btnLogin.setOnClickListener {
             presenter.validateLogin(
@@ -37,6 +39,10 @@ class LoginActivity : AppCompatActivity(), LoginView {
 
         tvSignUp.setOnClickListener {
             presenter.onSignUpClicked()
+        }
+
+        tvForgotPassword.setOnClickListener {
+            presenter.onForgotPasswordClicked()
         }
     }
 
@@ -56,5 +62,9 @@ class LoginActivity : AppCompatActivity(), LoginView {
     override fun navigateToRegister() {
         startActivity(Intent(this, RegisterActivity::class.java))
         finish()
+    }
+
+    override fun navigateToReset() {
+        startActivity(Intent(this, ResetActivity::class.java))
     }
 }
