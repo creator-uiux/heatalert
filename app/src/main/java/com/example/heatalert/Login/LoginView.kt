@@ -5,4 +5,5 @@ interface LoginView {
     fun showLoginError(message: String)
     fun navigateToHome()
     fun navigateToRegister()
+    fun navigateToReset()
 }
