@@ -31,4 +31,8 @@ class LoginPresenter(private val view: LoginView, private val context: Context) 
     fun onSignUpClicked() {
         view.navigateToRegister()
     }
+
+    fun onForgotPasswordClicked() {
+        view.navigateToReset()
+    }
 }
